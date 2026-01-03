@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 1 - Button Hover</title>
+    <style>
+        .btn {
+            padding: 15px 30px;
+            background-color: #007bff; /* Xanh */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 10px;
+            /* Yêu cầu: transition 0.5s mượt mà */
+            transition: background-color 0.5s ease;
+        }
+        /* Khi hover: Xanh -> Cam */
+        .btn:hover {
+            background-color: #ff8c00; 
+        }
+    </style>
+</head>
+<body>
+    <h2>Lab 1: Nút bấm đổi màu</h2>
+    <button class="btn">Nút 1</button>
+    <button class="btn">Nút 2</button>
+    <button class="btn">Nút 3</button>
+</body>
+</html> 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 2 - Gallery Hover</title>
+    <style>
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        .img-box {
+            overflow: hidden; /* Giữ ảnh không tràn khung khi phóng to */
+            border-radius: 10px;
+            border: 1px solid #ddd;
+        }
+        .img-box img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transform: scale(1);
+            /* Hiệu ứng chuyển động 0.4s */
+            transition: transform 0.4s ease, box-shadow 0.4s;
+            display: block;
+        }
+        /* Khi di chuột vào ảnh: phóng to 1.1 và đổ bóng */
+        .img-box img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center;">Lab 2: Gallery Ảnh Phóng To</h2>
+    <div class="gallery">
+        <div class="img-box">
+            <img src="app/assets/images/logo1.png" alt="Volleyball Logo">
+        </div>
+        <div class="img-box">
+            <img src="app/assets/images/basketball.png" alt="Basketball Team">
+        </div>
+        <div class="img-box">
+            <img src="app/assets/images/volleyball.png" alt="Volleyball Player">
+        </div>
+        <div class="img-box">
+            <img src="app/assets/images/basketball.png" alt="Sports News">
+        </div>
+    </div>
+</body>
+</html> 
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 3 - Menu Animation</title>
+    <link rel="stylesheet" href="app/assets/css/style.css">
+</head>
+<body>
+
+    <header>
+        <img src="app/assets/images/logo1.png" alt="Logo CLB" style="width:100px; border-radius:50%;">
+        <h1>CLB Bóng Chuyền Trường THPT</h1>
+    </header>
+
+    <div class="bai-3-header">
+        <h2>BÀI 3: MENU NGANG VỚI HIỆU ỨNG GẠCH CHÂN</h2>
+    </div>
+
+    <nav>
+        <ul class="nav-list">
+            <li><a href="#trangchu">Trang chủ</a></li>
+            <li><a href="#gioithieu">Giới thiệu</a></li>
+            <li><a href="#gallery">Hình ảnh</a></li>
+            <li><a href="#dangky">Đăng ký</a></li>
+            <li><a href="#lienhe">Liên hệ</a></li>
+        </ul>
+    </nav>
+
+    <section id="trangchu">
+        <p style="text-align: center;">Di chuột vào các mục Menu ở trên để thấy hiệu ứng gạch chân chạy từ trái sang phải.</p>
+    </section>
+
+    <footer>
+        © 2025 CLB Bóng Chuyền - Lab 3 Animation
+    </footer>
+
+</body>
+</html> 
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 4 - Product Cards</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>CLB BÓNG CHUYỀN TRƯỜNG THPT</h1>
+    </header>
+
+    <section id="lab4">
+        <h2 style="text-align: center;">BÀI 4: PHỤ KIỆN THỂ THAO</h2>
+        
+        <div class="card-container">
+            <div class="card">
+                <img src="app/assets/images/ronaldo.webp" alt="CR7 Jersey">
+                <div class="card-content">
+                    <h3>CR7 Edition Jersey</h3>
+                    <p class="price">850,000 VND</p>
+                    <p class="desc">Limited edition with 4-way stretch cold elastic material.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="app/assets/images/arsenal_3.webp" alt="Arsenal Training">
+                <div class="card-content">
+                    <h3>Arsenal 2026 Training Kit</h3>
+                    <p class="price">450,000 VND</p>
+                    <p class="desc">Modern design, suitable for both workouts and outings.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="app/assets/images/download.jpg" alt="Protective Accessories">
+                <div class="card-content">
+                    <h3>Protective Accessories</h3>
+                    <p class="price">150,000 VND</p>
+                    <p class="desc">Premium knee bandages, minimizing injuries to the maximum.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
+<section id="lab5">
+    <div class="lesson-header">
+        <h2 class="lesson-title">Lesson 5: Banner text appears fade-in</h2>
+    </div>
+
+    <div class="banner">
+        <h1 class="hero-title">Welcome to Our Amazing Website</h1>
+    </div>
+</section>
