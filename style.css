@@ -1,119 +1,196 @@
-/* Thiết lập chung */
-* { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
-body { background-color: #f4f4f4; }
-.section { padding: 40px 20px; text-align: center; }
-h2 { margin-bottom: 20px; }
+/* ========== RESET GỌN ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/* BÀI 1: BUTTONS [cite: 90, 95] */
+/* ========== BODY ========== */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f2f3f7;
+    color: #222;
+}
+
+/* ========== HEADER ========== */
+.main-header {
+    background: #fff;
+    padding: 16px 0;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.main-header h1 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* ========== MAIN ========== */
+.container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 16px;
+}
+
+/* ========== SECTION BOX ========== */
+.box {
+    background: #fff;
+    padding: 24px;
+    border-radius: 12px;
+    margin-bottom: 32px;
+}
+
+.section-title {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.box p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* ========== BÀI 1 BUTTONS ========== */
+.button-group {
+    display: flex;
+    gap: 16px;
+}
+
 .btn {
-    padding: 15px 30px;
-    background-color: #007bff; /* Xanh mặc định */
-    color: white;
+    padding: 12px 26px;
     border: none;
-    border-radius: 5px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #8a2be2, #ff4da6);
+    color: #fff;
     cursor: pointer;
-    font-weight: bold;
-    margin: 10px;
-    transition: background-color 0.5s ease; /* [cite: 95] */
+    transition: opacity 0.3s ease;
 }
+
 .btn:hover {
-    background-color: #ff8c00; /* Cam khi hover [cite: 96] */
+    opacity: 0.85;
 }
 
-/* BÀI 2: GALLERY [cite: 101, 108] */
-.gallery {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-.img-box {
-    width: 200px;
-    height: 150px;
-    overflow: hidden; /* [cite: 104] */
-    border-radius: 10px;
-}
-.img-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* [cite: 110] */
-    transition: transform 0.4s ease, box-shadow 0.4s; /* [cite: 108] */
-}
-.img-box img:hover {
-    transform: scale(1.1); /* Phóng to 1.1 [cite: 109] */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+/* ========== BÀI 2 GALLERY ========== */
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
 }
 
-/* BÀI 3: MENU UNDERLINE [cite: 114, 118] */
-.nav {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    background: #fff;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-.nav li { margin: 0 15px; }
-.nav a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    position: relative; /* [cite: 121] */
-    padding-bottom: 5px;
-}
-.nav a::after {
-    content: '';
-    position: absolute;
-    width: 0; /* [cite: 119] */
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #ff8c00;
-    transition: width 0.3s ease; /* [cite: 119] */
-}
-.nav a:hover::after {
-    width: 100%; /* [cite: 120] */
-}
-
-/* BÀI 4: CARDS [cite: 124, 129] */
-.card-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-.card {
-    background: #fff;
-    width: 250px;
-    border-radius: 10px;
+.img-item {
     overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* [cite: 129] */
-}
-.card img { width: 100%; height: 200px; object-fit: cover; }
-.card-info { padding: 15px; }
-.price { color: #e74c3c; font-weight: bold; margin-top: 5px; }
-
-.card:hover {
-    transform: translateY(-10px); /* Nổi lên 10px [cite: 125, 130] */
-    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    border-radius: 12px;
 }
 
-/* BÀI 5: BANNER FADE-IN [cite: 137, 139] */
-.banner {
-    height: 200px;
-    background: #333;
+.img-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.img-item img:hover {
+    transform: scale(1.08);
+}
+
+/* ========== BÀI 3 MENU ========== */
+.nav-list {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
+    gap: 32px;
+    list-style: none;
 }
-.hero-title {
-    font-size: 2.5rem;
-    opacity: 0; /* Ẩn ban đầu [cite: 141] */
-    animation: fade-in 2s ease forwards; /* Hiện dần trong 2s [cite: 146] */
+
+.nav-list a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #222;
+    position: relative;
+    padding-bottom: 4px;
 }
-@keyframes fade-in {
-    from { opacity: 0; }
-    to { opacity: 1; }
+
+.nav-list a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #8a2be2;
+    transition: width 0.3s ease;
+}
+
+.nav-list a:hover::after {
+    width: 100%;
+}
+
+/* ========== BÀI 4 CARDS ========== */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-card h3 {
+    font-size: 16px;
+    margin: 12px 0 4px;
+}
+
+.price {
+    font-size: 14px;
+    color: #e63946;
+    margin-bottom: 12px;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* ========== BÀI 5 BANNER ========== */
+.hero-banner {
+    background: #111;
+    padding: 60px 20px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.fade-text {
+    color: #fff;
+    font-size: 36px;
+    opacity: 0;
+    animation: fadeIn 1.8s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== FOOTER ========== */
+.main-footer {
+    text-align: center;
+    padding: 16px 0;
+    font-size: 13px;
+    color: #666;
 }
