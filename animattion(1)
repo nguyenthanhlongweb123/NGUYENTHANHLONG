@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUẢN LÝ HỌC TẬP - NGUYỄN THÀNH LONG</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #f8fafc;
+            --sidebar: #0f172a;
+            --card: #ffffff;
+            --primary: #2563eb;
+            --text-main: #1e293b;
+            --text-sub: #64748b;
+            --accent: #3b82f6;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg-body); color: var(--text-main); display: flex; min-height: 100vh; }
+
+        /* SIDEBAR */
+        aside { width: 280px; background: var(--sidebar); color: white; padding: 30px 20px; display: flex; flex-direction: column; }
+        .profile { text-align: center; padding-bottom: 30px; border-bottom: 1px solid #334155; margin-bottom: 20px; }
+        .profile h2 { font-size: 1.1rem; color: #38bdf8; }
+        .profile p { font-size: 0.8rem; color: #94a3b8; margin-top: 5px; }
+
+        nav ul { list-style: none; }
+        nav li { margin-bottom: 8px; }
+        nav a { color: #94a3b8; text-decoration: none; display: flex; align-items: center; padding: 12px; border-radius: 8px; transition: 0.3s; font-size: 0.95rem; }
+        nav a:hover, nav a.active { background: #1e293b; color: #38bdf8; }
+
+        /* MAIN CONTENT */
+        main { flex: 1; padding: 40px; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
+        .header h1 { font-size: 1.75rem; font-weight: 700; color: var(--sidebar); }
+
+        /* GRID BÀI TẬP */
+        .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { background: var(--card); padding: 25px; border-radius: 12px; border: 1px solid #e2e8f0; transition: 0.3s; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); border-color: var(--primary); }
+        .card h3 { font-size: 1.2rem; margin-bottom: 10px; color: var(--sidebar); }
+        .card p { font-size: 0.9rem; color: var(--text-sub); margin-bottom: 20px; line-height: 1.5; }
+        
+        .btn { display: inline-block; text-decoration: none; padding: 10px 20px; border-radius: 6px; font-weight: 600; font-size: 0.85rem; transition: 0.3s; }
+        .btn-open { background: var(--primary); color: white; }
+        .btn-open:hover { background: #1d4ed8; }
+
+        /* DANH SÁCH FILE WORD (Từ hình ảnh của bạn) */
+        .file-section { margin-top: 40px; background: white; padding: 30px; border-radius: 12px; border: 1px solid #e2e8f0; }
+        .file-section h2 { margin-bottom: 20px; font-size: 1.3rem; }
+        .file-list { width: 100%; border-collapse: collapse; }
+        .file-list th, .file-list td { text-align: left; padding: 12px; border-bottom: 1px solid #f1f5f9; }
+        .file-list th { color: var(--text-sub); font-size: 0.85rem; text-transform: uppercase; }
+        .file-icon { color: #2b579a; font-weight: bold; margin-right: 10px; }
+
+        @media (max-width: 1024px) { aside { width: 220px; } }
+        @media (max-width: 768px) { body { flex-direction: column; } aside { width: 100%; } }
+    </style>
+</head>
+<body>
+
+    <aside>
+        <div class="profile">
+            <h2>NGUYỄN THÀNH LONG</h2>
+            <p>Module 06: Web Design</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Dashboard</a></li>
+                <li><a href="lab 1 to 4/index.html">Lab 1 - Lab 4</a></li>
+                <li><a href="animation (1)/index.html">Animation (1)</a></li>
+                <li><a href="lab1/index1.html">Barca Project</a></li>
+                <li><a href="#">Tài liệu nộp bài</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main>
+        <div class="header">
+            <h1>Hệ thống quản lý bài tập</h1>
+            <div style="font-size: 0.9rem; color: var(--text-sub);">Hôm nay: 14/01/2026</div>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="card">
+                <h3>Thư mục: Lab 1 to 4</h3>
+                <p>Bao gồm các bài tập về thẻ HTML cơ bản, định dạng văn bản và bố cục sơ khai.</p>
+                <a href="lab 1 to 4/" class="btn btn-open">Mở bài tập</a>
+            </div>
+
+            <div class="card">
+                <h3>Thư mục: Animation (1)</h3>
+                <p>Tổng hợp các bài tập về Keyframes, Transition và hiệu ứng chuyển động CSS nâng cao.</p>
+                <a href="animation (1)/" class="btn btn-open">Xem kết quả</a>
+            </div>
+
+            <div class="card" style="border-left: 5px solid #a50044;">
+                <h3>Barca Store Project</h3>
+                <p>Website thương mại điện tử chuyên nghiệp về FC Barcelona (Responsive Design).</p>
+                <a href="lab1/index1.html" class="btn btn-open" style="background: #a50044;">Truy cập Store</a>
+            </div>
+        </div>
+
+        <div class="file-section">
+            <h2>Tài liệu đi kèm (.docx)</h2>
+            <table class="file-list">
+                <thead>
+                    <tr>
+                        <th>Tên File</th>
+                        <th>Ngày cập nhật</th>
+                        <th>Loại</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="file-icon">W</span> Bài kiểm tra cuối kì 1 môn lịch sử.docx</td>
+                        <td>23/12/2025</td>
+                        <td>Microsoft Word</td>
+                    </tr>
+                    <tr>
+                        <td><span class="file-icon">W</span> Bài thuyết trình trung thu.docx</td>
+                        <td>28/09/2025</td>
+                        <td>Microsoft Word</td>
+                    </tr>
+                    <tr>
+                        <td><span class="file-icon">W</span> lop9_giai_chi_tiet_phan2.docx</td>
+                        <td>20/10/2025</td>
+                        <td>Microsoft Word</td>
+                    </tr>
+                    <tr>
+                        <td><span class="file-icon">W</span> nd_thuyet_trinh_full.docx</td>
+                        <td>02/12/2025</td>
+                        <td>Microsoft Word</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+</body>
+</html>
